@@ -2432,8 +2432,8 @@
         { id: "atlas-fitness", nome: "Atlas Performance", nicho: "Fitness & Saúde", tag: "FITNESS", cor_destaque: "#FF6B35" },
         { id: "mentor-digital", nome: "Mentor Digital Academy", nicho: "Educação", tag: "EDUCATION", cor_destaque: "#6C63FF" },
         { id: "nexus-tech", nome: "Nexus Tech Solutions", nicho: "Tecnologia", tag: "TECH", cor_destaque: "#1A3AFF" },
-        { id: "bravos-brasil", nome: "Bravos Brasil", nicho: "Moda & E-commerce", tag: "E-COMMERCE", cor_destaque: "#1B3A5C", video: "assets/videos/bravos-brasil.webm" },
-        { id: "elleva-marketing", nome: "Elleva Marketing", nicho: "Marketing & Branding", tag: "MARKETING", cor_destaque: "#6C3FC5", video: "assets/videos/elleva-marketing.webm" }
+        { id: "bravos-brasil", nome: "Bravos Brasil", nicho: "Moda & E-commerce", tag: "E-COMMERCE", cor_destaque: "#1B3A5C", video: "assets/videos/bravos-brasil.webm", poster: "assets/videos/poster-bravos-brasil.jpg" },
+        { id: "elleva-marketing", nome: "Elleva Marketing", nicho: "Marketing & Branding", tag: "MARKETING", cor_destaque: "#6C3FC5", video: "assets/videos/elleva-marketing.webm", poster: "assets/videos/poster-elleva-marketing.jpg" }
       ];
       
       const gallery = document.getElementById('portfolio-gallery');
@@ -2448,7 +2448,7 @@
           card.classList.add('portfolio-card--video');
           card.innerHTML = `
       <div class="portfolio-card-video-wrap">
-        <video muted playsinline preload="none" data-src="${item.video}" aria-label="Preview ${item.nome}"></video>
+        <video muted playsinline preload="none" data-src="${item.video}" poster="${item.poster}" aria-label="Preview ${item.nome}"></video>
       </div>
       <div class="portfolio-card-overlay"></div>
       <div class="portfolio-card-content">
