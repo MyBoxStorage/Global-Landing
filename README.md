@@ -46,7 +46,7 @@ Substitua os placeholders abaixo para o site funcionar por completo:
 | **Formulário de contato** | Crie um formulário em [Formspree](https://formspree.io), copie o ID (ex: `xeqwqkzn`) e no `index.html` troque `YOUR_FORMSPREE_FORM_ID` em `action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID"` pelo seu ID. |
 | **Google Analytics (GA4)** | No `index.html`, substitua `G-XXXXXXXXXX` pelo seu ID de medição GA4 (ex: `G-ABC123XYZ`). |
 | **Meta Pixel (Facebook/Instagram)** | No `index.html`, substitua `XXXXXXXXXXXXXXX` pelo ID do seu Pixel. |
-| **WhatsApp** | No `index.html` e no footer, troque `https://wa.me/5511999999999` pelo número real (ex: `5511987654321`). |
+| **WhatsApp** | No `index.html` e no footer, troque `https://wa.me/5524981313689` pelo número real (ex: `5511987654321`). |
 | **Imagem OG** | Adicione em `assets/` uma imagem `og-image.jpg` com **1200×630 px** para redes sociais. Veja `assets/README.md`. |
 | **URL base** | Se o domínio for diferente de `https://globallanding.com.br`, atualize canonical, `og:url`, `sitemap.xml` e `robots.txt` com a URL correta. |
 
