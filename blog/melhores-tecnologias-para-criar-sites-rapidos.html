@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='55' fill='none' stroke='%23C9A84C' stroke-width='2'/%3E%3Cellipse cx='60' cy='60' rx='55' ry='13' fill='none' stroke='%23C9A84C' stroke-width='1.5'/%3E%3Cpath d='M60,5 Q95,30 95,60 Q95,90 60,115' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3Cpath d='M60,5 Q25,30 25,60 Q25,90 60,115' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next.js, Vercel e Tailwind: por que usamos as melhores tecnologias do mercado — Global Landing Blog</title>
+  <meta name="description" content="Conheça o stack tecnológico que usamos para criar sites rápidos, seguros e escaláveis para nossos clientes.">
+  <link rel="canonical" href="https://globallanding.com.br/blog/melhores-tecnologias-para-criar-sites-rapidos">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://globallanding.com.br/blog/melhores-tecnologias-para-criar-sites-rapidos">
+  <meta property="og:title" content="Next.js, Vercel e Tailwind: por que usamos as melhores tecnologias do mercado">
+  <meta property="og:description" content="Conheça o stack tecnológico que usamos para criar sites rápidos, seguros e escaláveis para nossos clientes.">
+  <meta property="og:image" content="https://globallanding.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://globallanding.com.br/assets/og-image.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Next.js, Vercel e Tailwind: por que usamos as melhores tecnologias do mercado",
+    "description": "Conheça o stack tecnológico que usamos para criar sites rápidos, seguros e escaláveis para nossos clientes.",
+    "author": {
+      "@type": "Organization",
+      "name": "Global Landing"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Global Landing",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://globallanding.com.br/assets/logo.svg"
+      }
+    },
+    "datePublished": "2025-02-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://globallanding.com.br/blog/melhores-tecnologias-para-criar-sites-rapidos"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #080808;
+      --bg-secondary: #0f0f0f;
+      --bg-card: #141414;
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --royal-blue: #1A3AFF;
+      --text-primary: #F5F5F0;
+      --text-secondary: #A0A0A0;
+      --text-muted: #555555;
+      --border-subtle: rgba(201, 168, 76, 0.15);
+      --font-display: 'Cormorant Garamond', serif;
+      --font-mono: 'Space Mono', monospace;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      background: rgba(8,8,8,0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo svg { width: 36px; height: 36px; }
+
+    .nav-logo-text {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+    }
+
+    .article-header {
+      padding: 160px 0 60px;
+      text-align: center;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .article-category {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .article-date {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 32px;
+    }
+
+    .article-content {
+      padding-bottom: 80px;
+    }
+
+    .article-content p {
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-top: 48px;
+      margin-bottom: 24px;
+    }
+
+    .article-content strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .article-content a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+
+    .article-cta {
+      background: var(--bg-secondary);
+      padding: 48px;
+      border-radius: 12px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .btn-primary {
+      padding: 16px 40px;
+      background: var(--gold);
+      color: var(--bg-primary);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      background: #050505;
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 0 40px;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-nav a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-nav a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
+      margin-top: 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-bottom p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGradientNav" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#C9A84C"/>
+            <stop offset="50%" style="stop-color:#E8C97A"/>
+            <stop offset="100%" style="stop-color:#9A7A2E"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.8"/>
+        <ellipse cx="60" cy="60" rx="55" ry="13" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.8"/>
+        <path d="M60,5 Q95,30 95,60 Q95,90 60,115" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.6"/>
+        <path d="M60,5 Q25,30 25,60 Q25,90 60,115" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.6"/>
+      </svg>
+      <span class="nav-logo-text">GLOBAL LANDING</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="../portfolio.html">Portfolio</a></li>
+      <li><a href="../servicos.html">Serviços</a></li>
+      <li><a href="../index.html#precos">Preços</a></li>
+      <li><a href="../index.html#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-meta">
+          <span class="article-category">Tecnologia</span>
+          <span class="article-date">01 de fevereiro de 2025</span>
+        </div>
+        <h1 class="article-title">Next.js, Vercel e Tailwind: por que usamos as melhores tecnologias do mercado</h1>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+        <p>Quando você contrata uma agência para criar seu site, provavelmente não pensa muito nas tecnologias que serão usadas. Mas essa escolha faz toda a diferença na performance, segurança e escalabilidade do seu projeto.
+
+Neste artigo, vamos explicar por que a Global Landing escolheu Next.js, Vercel e Tailwind CSS como nosso stack principal, e como isso beneficia nossos clientes.</p>
+
+        <h2>1. Next.js: o framework que revolucionou a web</h2>
+        <p>Next.js é um framework React desenvolvido pela Vercel que se tornou o padrão ouro para aplicações web modernas. Por que usamos:
+
+<strong>Renderização híbrida:</strong> Páginas podem ser pré-renderizadas no servidor (SSR) ou geradas estaticamente (SSG), otimizando performance e SEO.
+
+<strong>Performance nativa:</strong> Code splitting automático, lazy loading, otimização de imagens — tudo built-in.
+
+<strong>SEO-friendly:</strong> Diferente de SPAs tradicionais, Next.js entrega HTML completo, essencial para ranqueamento.
+
+<strong>Developer experience:</strong> Roteamento automático, hot reload, TypeScript support — desenvolvemos mais rápido.
+
+<strong>Escalabilidade:</strong> De landing pages simples a aplicações complexas, Next.js escala com seu negócio.
+
+Sites em Next.js carregam mais rápido, ranqueam melhor e oferecem experiências superiores aos usuários.</p>
+
+        <h2>2. Vercel: hospedagem de última geração</h2>
+        <p>Vercel é a plataforma de deploy criada pelos mesmos desenvolvedores do Next.js. É onde hospedamos a maioria dos nossos projetos:
+
+<strong>Edge Network:</strong> Seu site é servido do servidor mais próximo do usuário, reduzindo latência.
+
+<strong>Deploy contínuo:</strong> Atualizações são publicadas automaticamente a cada push no Git.
+
+<strong>Preview deployments:</strong> Cada alteração gera uma URL de preview para testes antes de ir ao ar.
+
+<strong>Analytics integrado:</strong> Métricas de performance reais dos usuários, não laboratoriais.
+
+<strong>Segurança:</strong> HTTPS automático, DDoS protection, compliance SOC2.
+
+<strong>Custo-benefício:</strong> Plano gratuito generoso, escalonamento conforme necessidade.
+
+Vercel + Next.js é uma combinação otimizada que entrega performance excepcional.</p>
+
+        <h2>3. Tailwind CSS: estilização eficiente</h2>
+        <p>Tailwind CSS revolucionou como escrevemos CSS. Em vez de criar classes customizadas para cada componente, usamos classes utilitárias pré-definidas:
+
+<strong>Desenvolvimento rápido:</strong> Não precisamos alternar entre HTML e arquivos CSS constantemente.
+
+<strong>Design consistente:</strong> Sistema de design built-in com espaçamentos, cores e tipografia padronizados.
+
+<strong>CSS otimizado:</strong> Apenas as classes usadas são incluídas no bundle final — arquivos menores.
+
+<strong>Responsivo fácil:</strong> Prefixos como md: e lg: tornam media queries simples.
+
+<strong>Customizável:</strong> Total controle sobre o tema, cores da marca, breakpoints.
+
+<strong>Manutenção simples:</strong> Estilos estão no HTML, fáceis de encontrar e modificar.
+
+Tailwind nos permite criar interfaces bonitas e consistentes em menos tempo.</p>
+
+        <h2>4. O que isso significa para você</h2>
+        <p>Você não precisa entender tecnologia para se beneficiar dela. Aqui está o que nosso stack entrega:
+
+<strong>Sites que carregam em segundos:</strong> Performance superior significa menos visitantes abandonando.
+
+<strong>Melhor ranqueamento no Google:</strong> PageSpeed é fator de ranqueamento. Nossos sites frequentemente atingem 90+.
+
+<strong>Segurança de nível enterprise:</strong> Infraestrutura usada por empresas como Netflix, Uber, Airbnb.
+
+<strong>Escalabilidade garantida:</strong> Seu site não vai cair se der um pico de tráfego.
+
+<strong>Manutenção simplificada:</strong> Código limpo e moderno é mais fácil de atualizar.
+
+<strong>Future-proof:</strong> Tecnologias que estão na vanguarda e continuarão relevantes.</p>
+
+        <h2>5. Quando usamos outras tecnologias</h2>
+        <p>Embora Next.js + Vercel + Tailwind seja nosso stack padrão, adaptamos às necessidades de cada projeto:
+
+<strong>WordPress:</strong> Para clientes que precisam de CMS robusto e fácil de usar.
+
+<strong>React puro:</strong> Para aplicações altamente interativas com requisitos específicos.
+
+<strong>HTML/CSS/Vanilla JS:</strong> Para projetos simples onde simplicidade é prioridade.
+
+<strong>Shopify:</strong> Para e-commerces que precisam de plataforma completa.
+
+A escolha da tecnologia sempre serve aos objetivos do negócio, nunca o contrário.</p>
+
+        <div class="article-cta">
+          <p>A tecnologia por trás do seu site importa mais do que você imagina. Ela afeta não apenas como o site funciona, mas também seu ranqueamento no Google, sua segurança e sua capacidade de escalar.
+
+Na Global Landing, investimos constantemente em aprender e aplicar as melhores tecnologias do mercado. Nosso compromisso é entregar sites que não apenas parecem bons, mas que performam excepcionalmente.
+
+Quer saber mais sobre como nosso stack tecnológico pode beneficiar seu projeto? <a href='../index.html#contato'>Entre em contato</a> e vamos conversar.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="../index.html" class="footer-logo">
+          <svg viewBox="0 0 120 120" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="goldGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A84C"/>
+                <stop offset="100%" style="stop-color:#9A7A2E"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGradientFooter)" stroke-width="0.8"/>
+            <ellipse cx="60" cy="60" rx="55" ry="13" fill="none" stroke="url(#goldGradientFooter)" stroke-width="0.8"/>
+          </svg>
+          <span>GLOBAL LANDING</span>
+        </a>
+
+        <nav class="footer-nav">
+          <a href="../portfolio.html">Portfolio</a>
+          <a href="../servicos.html">Serviços</a>
+          <a href="index.html">Blog</a>
+          <a href="../index.html#contato">Contato</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Global Landing · Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='55' fill='none' stroke='%23C9A84C' stroke-width='2'/%3E%3Cellipse cx='60' cy='60' rx='55' ry='13' fill='none' stroke='%23C9A84C' stroke-width='1.5'/%3E%3Cpath d='M60,5 Q95,30 95,60 Q95,90 60,115' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3Cpath d='M60,5 Q25,30 25,60 Q25,90 60,115' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEO: o que é otimização para IA e por que vai mudar o marketing digital — Global Landing Blog</title>
+  <meta name="description" content="Descubra o GEO (Generative Engine Optimization) e como preparar seu site para ser encontrado pelas IAs como ChatGPT e Perplexity.">
+  <link rel="canonical" href="https://globallanding.com.br/blog/o-que-e-geo-otimizacao-para-ia">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://globallanding.com.br/blog/o-que-e-geo-otimizacao-para-ia">
+  <meta property="og:title" content="GEO: o que é otimização para IA e por que vai mudar o marketing digital">
+  <meta property="og:description" content="Descubra o GEO (Generative Engine Optimization) e como preparar seu site para ser encontrado pelas IAs como ChatGPT e Perplexity.">
+  <meta property="og:image" content="https://globallanding.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://globallanding.com.br/assets/og-image.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "GEO: o que é otimização para IA e por que vai mudar o marketing digital",
+    "description": "Descubra o GEO (Generative Engine Optimization) e como preparar seu site para ser encontrado pelas IAs como ChatGPT e Perplexity.",
+    "author": {
+      "@type": "Organization",
+      "name": "Global Landing"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Global Landing",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://globallanding.com.br/assets/logo.svg"
+      }
+    },
+    "datePublished": "2025-02-05",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://globallanding.com.br/blog/o-que-e-geo-otimizacao-para-ia"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #080808;
+      --bg-secondary: #0f0f0f;
+      --bg-card: #141414;
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --royal-blue: #1A3AFF;
+      --text-primary: #F5F5F0;
+      --text-secondary: #A0A0A0;
+      --text-muted: #555555;
+      --border-subtle: rgba(201, 168, 76, 0.15);
+      --font-display: 'Cormorant Garamond', serif;
+      --font-mono: 'Space Mono', monospace;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      background: rgba(8,8,8,0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo svg { width: 36px; height: 36px; }
+
+    .nav-logo-text {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+    }
+
+    .article-header {
+      padding: 160px 0 60px;
+      text-align: center;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .article-category {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .article-date {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 32px;
+    }
+
+    .article-content {
+      padding-bottom: 80px;
+    }
+
+    .article-content p {
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-top: 48px;
+      margin-bottom: 24px;
+    }
+
+    .article-content strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .article-content a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+
+    .article-cta {
+      background: var(--bg-secondary);
+      padding: 48px;
+      border-radius: 12px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .btn-primary {
+      padding: 16px 40px;
+      background: var(--gold);
+      color: var(--bg-primary);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      background: #050505;
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 0 40px;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-nav a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-nav a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
+      margin-top: 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-bottom p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGradientNav" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#C9A84C"/>
+            <stop offset="50%" style="stop-color:#E8C97A"/>
+            <stop offset="100%" style="stop-color:#9A7A2E"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.8"/>
+        <ellipse cx="60" cy="60" rx="55" ry="13" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.8"/>
+        <path d="M60,5 Q95,30 95,60 Q95,90 60,115" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.6"/>
+        <path d="M60,5 Q25,30 25,60 Q25,90 60,115" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.6"/>
+      </svg>
+      <span class="nav-logo-text">GLOBAL LANDING</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="../portfolio.html">Portfolio</a></li>
+      <li><a href="../servicos.html">Serviços</a></li>
+      <li><a href="../index.html#precos">Preços</a></li>
+      <li><a href="../index.html#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-meta">
+          <span class="article-category">GEO</span>
+          <span class="article-date">05 de fevereiro de 2025</span>
+        </div>
+        <h1 class="article-title">GEO: o que é otimização para IA e por que vai mudar o marketing digital</h1>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+        <p>Enquanto a maioria das empresas ainda luta para entender SEO, uma nova revolução já está acontecendo: o GEO (Generative Engine Optimization). Se o SEO é sobre aparecer no Google, o GEO é sobre ser citado pelas Inteligências Artificiais.
+
+Neste artigo, vamos explorar o que é GEO, por que ele importa, e como você pode preparar seu site para esse novo paradigma da descoberta digital.</p>
+
+        <h2>1. O que é GEO (Generative Engine Optimization)?</h2>
+        <p>GEO é a prática de otimizar seu conteúdo para ser encontrado, citado e recomendado por motores de IA generativa como ChatGPT, Perplexity, Google AI Overview, Claude e outros.
+
+Diferente do SEO tradicional, onde o objetivo é ranquear em uma lista de resultados, o GEO foca em:
+
+- Ser citado como fonte nas respostas das IAs
+- Aparecer em respostas diretas a perguntas
+- Ser recomendado quando usuários pedem sugestões
+- Estar presente no "conhecimento" que as IAs acessam
+
+Em outras palavras: se o SEO é sobre aparecer na página de resultados, o GEO é sobre ser a resposta.</p>
+
+        <h2>2. Por que GEO importa para o seu negócio?</h2>
+        <p>A forma como as pessoas buscam informação está mudando radicalmente:
+
+<strong>Mudança de comportamento:</strong> Cada vez mais pessoas fazem perguntas diretas a IAs em vez de digitar palavras-chave no Google.
+
+<strong>Respostas diretas:</strong> As IAs fornecem respostas completas, muitas vezes sem exigir que o usuário visite múltiplos sites.
+
+<strong>Menos cliques:</strong> Se você não está na resposta da IA, você não existe para essa nova forma de busca.
+
+<strong>Primeira vantagem:</strong> Empresas que se posicionarem agora terão vantagem competitiva significativa.
+
+Estima-se que até 2027, mais de 50% das buscas online serão feitas através de IAs. O GEO não é o futuro — é o presente que poucos ainda perceberam.</p>
+
+        <h2>3. Como as IAs encontram informações?</h2>
+        <p>Para otimizar para IAs, primeiro precisamos entender como elas funcionam:
+
+<strong>Indexação da web:</strong> IAs como Perplexity e algumas versões do ChatGPT acessam a internet em tempo real.
+
+<strong>Bases de conhecimento:</strong> Outras IAs treinam em grandes conjuntos de dados que incluem conteúdo web.
+
+<strong>Structured data:</strong> IAs entendem melhor conteúdo com marcação estruturada (Schema.org).
+
+<strong>Contexto e semântica:</strong> IAs analisam o significado, não apenas palavras-chave isoladas.
+
+<strong>Autoridade e confiança:</strong> IAs tendem a citar fontes reconhecidas e confiáveis.</p>
+
+        <h2>4. Estratégias práticas de GEO</h2>
+        <p>Aqui está como otimizar seu site para IAs:
+
+<strong>1. Responda perguntas diretamente</strong>
+Estruture seu conteúdo em formato de perguntas e respostas claras. Use headings H2 e H3 para organizar tópicos.
+
+<strong>2. Use Schema.org markup</strong>
+Implemente structured data para ajudar IAs a entender seu conteúdo: Organization, LocalBusiness, Article, FAQ, etc.
+
+<strong>3. Crie conteúdo abrangente</strong>
+Artigos que cobrem um tópico completamente têm mais chances de serem citados.
+
+<strong>4. Mantenha informações atualizadas</strong>
+IAs priorizam conteúdo recente e preciso. Atualize páginas importantes regularmente.
+
+<strong>5. Construa autoridade</strong>
+Seja citado por outros sites respeitados. Autoridade de domínio importa para IAs também.
+
+<strong>6. Use linguagem natural</strong>
+Escreva como falaria com um cliente, não para robôs. IAs entendem contexto e nuances.</p>
+
+        <h2>5. GEO e SEO: trabalhando juntos</h2>
+        <p>O bom news é que GEO e SEO não são mutuamente exclusivos — na verdade, se complementam:
+
+- Conteúdo bem estruturado beneficia ambos
+- Autoridade de domínio é importante para ambos
+- Structured data ajuda em ambos
+- Experiência do usuário é fundamental para ambos
+
+Na Global Landing, desenvolvemos sites otimizados tanto para SEO tradicional quanto para GEO. Nossa abordagem estratégica garante que seu negócio esteja preparado para o presente e o futuro da descoberta digital.</p>
+
+        <div class="article-cta">
+          <p>O GEO representa uma mudança fundamental na forma como as pessoas descobrem negócios online. Enquanto muitas empresas ainda focam apenas no SEO tradicional, as que se posicionarem agora no GEO terão uma vantagem competitiva enorme.
+
+A boa notícia é que os princípios são similares: crie conteúdo de qualidade, estruture bem suas informações, construa autoridade e mantenha tudo atualizado. A diferença está na mentalidade: pense em ser a resposta, não apenas aparecer nos resultados.
+
+Na Global Landing, todos os sites que desenvolvemos já saem otimizados para SEO e GEO. Queremos que nossos clientes estejam preparados para o futuro, não apenas para o presente.
+
+Quer saber mais sobre como o GEO pode beneficiar seu negócio? <a href='../index.html#contato'>Entre em contato</a> e vamos conversar sobre estratégia.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="../index.html" class="footer-logo">
+          <svg viewBox="0 0 120 120" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="goldGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A84C"/>
+                <stop offset="100%" style="stop-color:#9A7A2E"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGradientFooter)" stroke-width="0.8"/>
+            <ellipse cx="60" cy="60" rx="55" ry="13" fill="none" stroke="url(#goldGradientFooter)" stroke-width="0.8"/>
+          </svg>
+          <span>GLOBAL LANDING</span>
+        </a>
+
+        <nav class="footer-nav">
+          <a href="../portfolio.html">Portfolio</a>
+          <a href="../servicos.html">Serviços</a>
+          <a href="index.html">Blog</a>
+          <a href="../index.html#contato">Contato</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Global Landing · Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

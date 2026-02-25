@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='55' fill='none' stroke='%23C9A84C' stroke-width='2'/%3E%3Cellipse cx='60' cy='60' rx='55' ry='13' fill='none' stroke='%23C9A84C' stroke-width='1.5'/%3E%3Cpath d='M60,5 Q95,30 95,60 Q95,90 60,115' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3Cpath d='M60,5 Q25,30 25,60 Q25,90 60,115' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como criar um site profissional para clínica médica que gera agendamentos — Global Landing Blog</title>
+  <meta name="description" content="Guia completo para criar um site de clínica médica que converte visitantes em pacientes agendados.">
+  <link rel="canonical" href="https://globallanding.com.br/blog/como-criar-site-para-clinica-medica">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://globallanding.com.br/blog/como-criar-site-para-clinica-medica">
+  <meta property="og:title" content="Como criar um site profissional para clínica médica que gera agendamentos">
+  <meta property="og:description" content="Guia completo para criar um site de clínica médica que converte visitantes em pacientes agendados.">
+  <meta property="og:image" content="https://globallanding.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://globallanding.com.br/assets/og-image.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Como criar um site profissional para clínica médica que gera agendamentos",
+    "description": "Guia completo para criar um site de clínica médica que converte visitantes em pacientes agendados.",
+    "author": {
+      "@type": "Organization",
+      "name": "Global Landing"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Global Landing",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://globallanding.com.br/assets/logo.svg"
+      }
+    },
+    "datePublished": "2025-01-29",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://globallanding.com.br/blog/como-criar-site-para-clinica-medica"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #080808;
+      --bg-secondary: #0f0f0f;
+      --bg-card: #141414;
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --royal-blue: #1A3AFF;
+      --text-primary: #F5F5F0;
+      --text-secondary: #A0A0A0;
+      --text-muted: #555555;
+      --border-subtle: rgba(201, 168, 76, 0.15);
+      --font-display: 'Cormorant Garamond', serif;
+      --font-mono: 'Space Mono', monospace;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      background: rgba(8,8,8,0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo svg { width: 36px; height: 36px; }
+
+    .nav-logo-text {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+    }
+
+    .article-header {
+      padding: 160px 0 60px;
+      text-align: center;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .article-category {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .article-date {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 32px;
+    }
+
+    .article-content {
+      padding-bottom: 80px;
+    }
+
+    .article-content p {
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-top: 48px;
+      margin-bottom: 24px;
+    }
+
+    .article-content strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .article-content a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+
+    .article-cta {
+      background: var(--bg-secondary);
+      padding: 48px;
+      border-radius: 12px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .btn-primary {
+      padding: 16px 40px;
+      background: var(--gold);
+      color: var(--bg-primary);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      background: #050505;
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 0 40px;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-nav a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-nav a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
+      margin-top: 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-bottom p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGradientNav" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#C9A84C"/>
+            <stop offset="50%" style="stop-color:#E8C97A"/>
+            <stop offset="100%" style="stop-color:#9A7A2E"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.8"/>
+        <ellipse cx="60" cy="60" rx="55" ry="13" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.8"/>
+        <path d="M60,5 Q95,30 95,60 Q95,90 60,115" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.6"/>
+        <path d="M60,5 Q25,30 25,60 Q25,90 60,115" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.6"/>
+      </svg>
+      <span class="nav-logo-text">GLOBAL LANDING</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="../portfolio.html">Portfolio</a></li>
+      <li><a href="../servicos.html">Serviços</a></li>
+      <li><a href="../index.html#precos">Preços</a></li>
+      <li><a href="../index.html#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-meta">
+          <span class="article-category">Saúde</span>
+          <span class="article-date">29 de janeiro de 2025</span>
+        </div>
+        <h1 class="article-title">Como criar um site profissional para clínica médica que gera agendamentos</h1>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+        <p>No setor de saúde, a primeira impressão é crucial. Quando um paciente potencial procura por uma clínica médica online, seu site é frequentemente o primeiro contato com sua marca. Um site profissional pode ser a diferença entre ganhar ou perder um paciente.
+
+Neste guia completo, vamos explorar todos os elementos essenciais que um site de clínica médica precisa ter para atrair pacientes e gerar agendamentos.</p>
+
+        <h2>1. Design que transmite confiança</h2>
+        <p>O design do seu site deve refletir a qualidade dos serviços médicos que você oferece:
+
+<strong>Cores adequadas:</strong> Paletas que transmitem calma, limpeza e profissionalismo (azuis, verdes, brancos).
+
+<strong>Tipografia legível:</strong> Fontes claras, tamanhos adequados, bom contraste.
+
+<strong>Layout organizado:</strong> Informações bem estruturadas, fácil navegação.
+
+<strong>Fotos profissionais:</strong> Imagens de qualidade da clínica, equipe e instalações.
+
+<strong>Design responsivo:</strong> Funciona perfeitamente em todos os dispositivos.
+
+Lembre-se: pacientes estão buscando segurança. Seu design deve transmitir exatamente isso.</p>
+
+        <h2>2. Informações essenciais em destaque</h2>
+        <p>Certas informações devem ser facilmente encontradas:
+
+<strong>Especialidades:</strong> Liste claramente todas as especialidades médicas oferecidas.
+
+<strong>Equipe médica:</strong> Perfis dos médicos com foto, formação, especialização e CRM.
+
+<strong>Horário de funcionamento:</strong> Dias e horários de atendimento de cada especialidade.
+
+<strong>Localização:</strong> Endereço completo com mapa interativo.
+
+<strong>Contato:</strong> Telefone, WhatsApp, e-mail — múltiplas opções de comunicação.
+
+<strong>Convênios aceitos:</strong> Lista de planos de saúde atendidos.
+
+<strong>Valores:</strong> Se possível, informe valores de consultas particulares.</p>
+
+        <h2>3. Agendamento online integrado</h2>
+        <p>O agendamento online é um dos recursos mais importantes:
+
+<strong>Facilidade de uso:</strong> Processo simples, poucos cliques.
+
+<strong>Escolha de especialidade:</strong> Paciente seleciona a especialidade desejada.
+
+<strong>Escolha de médico:</strong> Opção de escolher profissional específico.
+
+<strong>Horários disponíveis:</strong> Mostre apenas horários realmente disponíveis.
+
+<strong>Confirmação:</strong> Envie confirmação por e-mail e/ou WhatsApp.
+
+<strong>Lembretes:</strong> Notificações automáticos antes da consulta.
+
+<strong>Cancelamento fácil:</strong> Permita cancelamento online com antecedência.
+
+Se não tiver um sistema próprio, integre com WhatsApp Business para agendamento direto.</p>
+
+        <h2>4. SEO local para ser encontrado</h2>
+        <p>Pacientes buscam por "médico perto de mim" ou "clínica [especialidade] em [cidade]". Otimize para isso:
+
+<strong>Google Meu Negócio:</strong> Cadastro essencial para aparecer no Google Maps.
+
+<strong>Páginas por especialidade:</strong> Crie páginas individuais para cada especialidade.
+
+<strong>Conteúdo local:</strong> Mencione bairros e regiões atendidas.
+
+<strong>Palavras-chave locais:</strong> "Cardiologista em São Paulo", "Clínica geral no Centro".
+
+<strong>Schema markup:</strong> Marcação LocalBusiness para ajudar o Google.
+
+<strong>Avaliações:</strong> Incentive pacientes satisfeitos a deixar reviews no Google.</p>
+
+        <h2>5. Conteúdo que educa e engaja</h2>
+        <p>Um blog ativo traz múltiplos benefícios:
+
+<strong>SEO:</strong> Mais conteúdo = mais oportunidades de ranquear.
+
+<strong>Autoridade:</strong> Demonstra expertise e conhecimento.
+
+<strong>Confiança:</strong> Pacientes confiam mais em médicos que educam.
+
+<strong>Engajamento:</strong> Mantém pacientes conectados à clínica.
+
+<strong>Temas para blog médico:</strong>
+- Prevenção de doenças
+- Explicações sobre condições comuns
+- Dicas de saúde e bem-estar
+- Novidades sobre tratamentos
+- Respostas a perguntas frequentes
+
+Lembre-se de sempre incluir um disclaimer de que o conteúdo é informativo, não substitui consulta médica.</p>
+
+        <div class="article-cta">
+          <p>Um site profissional para clínica médica é mais do que uma vitrine digital — é uma ferramenta de captação de pacientes que trabalha 24 horas por dia. Quando bem projetado, ele não apenas informa, mas converte visitantes em agendamentos.
+
+Na Global Landing, temos experiência específica em criar sites para clínica médica que geram resultados reais. Nossos projetos incluem design profissional, SEO local otimizado, integração com sistemas de agendamento e tudo o que sua clínica precisa para crescer.
+
+Quer um site que realmente traga pacientes para sua clínica? <a href='../index.html#contato'>Entre em contato</a> e solicite uma proposta personalizada.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="../index.html" class="footer-logo">
+          <svg viewBox="0 0 120 120" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="goldGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A84C"/>
+                <stop offset="100%" style="stop-color:#9A7A2E"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGradientFooter)" stroke-width="0.8"/>
+            <ellipse cx="60" cy="60" rx="55" ry="13" fill="none" stroke="url(#goldGradientFooter)" stroke-width="0.8"/>
+          </svg>
+          <span>GLOBAL LANDING</span>
+        </a>
+
+        <nav class="footer-nav">
+          <a href="../portfolio.html">Portfolio</a>
+          <a href="../servicos.html">Serviços</a>
+          <a href="index.html">Blog</a>
+          <a href="../index.html#contato">Contato</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Global Landing · Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

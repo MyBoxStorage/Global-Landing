@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerar og-image.jpg — Global Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #1a1a1a;
+      color: #f5f5f0;
+      padding: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 1.25rem; margin-bottom: 8px; }
+    p { color: #a0a0a0; font-size: 14px; margin-bottom: 24px; }
+    .preview {
+      background: #080808;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      overflow: auto;
+    }
+    canvas { display: block; max-width: 100%; height: auto; }
+    a.download {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #C9A84C;
+      color: #080808;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+    a.download:hover { background: #E8C97A; }
+    .hint { font-size: 12px; color: #555; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Gerar og-image.jpg (1200×630)</h1>
+  <p>Imagem para Open Graph e Twitter Card. Abra esta página no navegador, clique em &quot;Baixar og-image.jpg&quot; e salve o arquivo em <code>assets/og-image.jpg</code>.</p>
+  <div class="preview">
+    <canvas id="c" width="1200" height="630"></canvas>
+  </div>
+  <a href="#" class="download" id="dl">Baixar og-image.jpg</a>
+  <p class="hint">Salve o arquivo baixado como <strong>assets/og-image.jpg</strong> na raiz do projeto.</p>
+
+  <script>
+    (function() {
+      const c = document.getElementById('c');
+      const ctx = c.getContext('2d');
+      const w = 1200, h = 630;
+
+      // Fundo
+      ctx.fillStyle = '#080808';
+      ctx.fillRect(0, 0, w, h);
+
+      // Gradiente dourado (simplificado para canvas)
+      const gold = ctx.createLinearGradient(0, 0, w, h);
+      gold.addColorStop(0, '#9A7A2E');
+      gold.addColorStop(0.5, '#E8C97A');
+      gold.addColorStop(1, '#C9A84C');
+
+      const cx = 600, cy = 260;
+      const scale = 2.6;
+
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.scale(scale, scale);
+
+      ctx.strokeStyle = gold;
+      ctx.lineWidth = 2 / scale;
+      ctx.beginPath();
+      ctx.arc(0, 0, 55, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.lineWidth = 1.5 / scale;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, 55, 13, 0, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.lineWidth = 1 / scale;
+      ctx.beginPath();
+      ctx.moveTo(0, -55);
+      ctx.quadraticCurveTo(35, -25, 35, 0);
+      ctx.quadraticCurveTo(35, 25, 0, 55);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(0, -55);
+      ctx.quadraticCurveTo(-35, -25, -35, 0);
+      ctx.quadraticCurveTo(-35, 25, 0, 55);
+      ctx.stroke();
+
+      ctx.restore();
+
+      // Texto "GLOBAL LANDING"
+      ctx.fillStyle = '#C9A84C';
+      ctx.font = '600 48px "Cormorant Garamond", "Times New Roman", serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('GLOBAL LANDING', 600, 400);
+
+      // Tagline
+      ctx.fillStyle = 'rgba(245, 245, 240, 0.85)';
+      ctx.font = '400 24px "DM Sans", system-ui, sans-serif';
+      ctx.fillText('Sites profissionais em 14 dias', 600, 450);
+
+      // Download
+      document.getElementById('dl').onclick = function(e) {
+        e.preventDefault();
+        const link = document.createElement('a');
+        link.download = 'og-image.jpg';
+        link.href = c.toDataURL('image/jpeg', 0.92);
+        link.click();
+      };
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='55' fill='none' stroke='%23C9A84C' stroke-width='2'/%3E%3Cellipse cx='60' cy='60' rx='55' ry='13' fill='none' stroke='%23C9A84C' stroke-width='1.5'/%3E%3Cpath d='M60,5 Q95,30 95,60 Q95,90 60,115' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3Cpath d='M60,5 Q25,30 25,60 Q25,90 60,115' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Global Landing</title>
+  <meta name="description" content="Veja os projetos de websites e landing pages desenvolvidos pela Global Landing. Transformações digitais para diversos segmentos.">
+  <link rel="canonical" href="https://globallanding.com.br/portfolio">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://globallanding.com.br/portfolio">
+  <meta property="og:title" content="Portfolio — Global Landing">
+  <meta property="og:description" content="Projetos que transformam negócios em referências digitais.">
+  <meta property="og:image" content="https://globallanding.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://globallanding.com.br/assets/og-image.jpg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-primary: #080808;
+      --bg-secondary: #0f0f0f;
+      --bg-card: #141414;
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --royal-blue: #1A3AFF;
+      --text-primary: #F5F5F0;
+      --text-secondary: #A0A0A0;
+      --text-muted: #555555;
+      --border-subtle: rgba(201, 168, 76, 0.15);
+      --font-display: 'Cormorant Garamond', serif;
+      --font-mono: 'Space Mono', monospace;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+    }
+    
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      background: rgba(8,8,8,0.9);
+      backdrop-filter: blur(10px);
+    }
+    
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    
+    .nav-logo svg {
+      width: 36px;
+      height: 36px;
+    }
+    
+    .nav-logo-text {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover { color: var(--gold); }
+    
+    .btn-nav {
+      padding: 10px 20px;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-nav:hover {
+      background: var(--gold);
+      color: var(--bg-primary);
+    }
+    
+    @media (max-width: 768px) {
+      .nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+    }
+    
+    /* Hero */
+    .page-hero {
+      padding: 160px 0 80px;
+      text-align: center;
+    }
+    
+    .page-hero-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .page-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+    
+    .page-hero-subtitle {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    /* Filters */
+    .filters {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+      padding: 0 24px;
+    }
+    
+    .filter-btn {
+      padding: 10px 24px;
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-family: var(--font-body);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 100px;
+    }
+    
+    .filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    
+    .filter-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--bg-primary);
+    }
+    
+    /* Portfolio Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      padding-bottom: 120px;
+    }
+    
+    @media (max-width: 1024px) {
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    @media (max-width: 768px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+    }
+    
+    .portfolio-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      text-decoration: none;
+      display: block;
+      opacity: 1;
+      transform: scale(1);
+      transition: all 0.4s ease;
+    }
+    
+    .portfolio-card.hidden {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+      position: absolute;
+    }
+    
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    .portfolio-card-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 8s ease;
+    }
+    
+    .portfolio-card:hover .portfolio-card-bg {
+      transform: scale(1.1);
+    }
+    
+    .portfolio-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.3) 50%, transparent 100%);
+      opacity: 0.7;
+      transition: opacity 0.4s ease;
+    }
+    
+    .portfolio-card:hover .portfolio-card-overlay {
+      opacity: 0.95;
+    }
+    
+    .portfolio-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px;
+    }
+    
+    .portfolio-card-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    
+    .portfolio-card-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    
+    .portfolio-card-desc {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s ease;
+    }
+    
+    .portfolio-card:hover .portfolio-card-desc {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .portfolio-card-link {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    /* Footer */
+    .footer {
+      background: #050505;
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 0 40px;
+    }
+    
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    
+    .footer-logo span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+    
+    .footer-nav {
+      display: flex;
+      gap: 24px;
+    }
+    
+    .footer-nav a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-nav a:hover { color: var(--gold); }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
+      margin-top: 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    
+    .footer-bottom p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGradientNav" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#C9A84C"/>
+            <stop offset="50%" style="stop-color:#E8C97A"/>
+            <stop offset="100%" style="stop-color:#9A7A2E"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.8"/>
+        <ellipse cx="60" cy="60" rx="55" ry="13" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.8"/>
+        <path d="M60,5 Q95,30 95,60 Q95,90 60,115" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.6"/>
+        <path d="M60,5 Q25,30 25,60 Q25,90 60,115" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.6"/>
+      </svg>
+      <span class="nav-logo-text">GLOBAL LANDING</span>
+    </a>
+    
+    <ul class="nav-links">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="index.html#precos">Preços</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+    
+    <a href="index.html#contato" class="btn-nav">Quero meu site</a>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="page-hero-tag">— NOSSO TRABALHO</span>
+      <h1 class="page-hero-title">Cada projeto, uma<br>transformação digital.</h1>
+      <p class="page-hero-subtitle">Sites e landing pages desenvolvidos com precisão estratégica para gerar resultados reais.</p>
+    </div>
+  </header>
+
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="saude">Saúde</button>
+    <button class="filter-btn" data-filter="juridico">Jurídico</button>
+    <button class="filter-btn" data-filter="food">Food & Beverage</button>
+    <button class="filter-btn" data-filter="imobiliario">Imobiliário</button>
+    <button class="filter-btn" data-filter="beleza">Beleza</button>
+    <button class="filter-btn" data-filter="fitness">Fitness</button>
+    <button class="filter-btn" data-filter="educacao">Educação</button>
+    <button class="filter-btn" data-filter="tecnologia">Tecnologia</button>
+    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+    <button class="filter-btn" data-filter="marketing">Marketing</button>
+  </div>
+
+  <section class="container">
+    <div class="portfolio-grid" id="portfolio-grid">
+      <!-- Cards will be generated by JS -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="index.html" class="footer-logo">
+          <svg viewBox="0 0 120 120" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="goldGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A84C"/>
+                <stop offset="100%" style="stop-color:#9A7A2E"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGradientFooter)" stroke-width="0.8"/>
+            <ellipse cx="60" cy="60" rx="55" ry="13" fill="none" stroke="url(#goldGradientFooter)" stroke-width="0.8"/>
+          </svg>
+          <span>GLOBAL LANDING</span>
+        </a>
+        
+        <nav class="footer-nav">
+          <a href="portfolio.html">Portfolio</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="blog/index.html">Blog</a>
+          <a href="index.html#contato">Contato</a>
+        </nav>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Global Landing · Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const portfolioItems = [
+      { id: "clinica-horizonte", nome: "Clínica Horizonte Saúde", nicho: "Saúde", tag: "HEALTH", filter: "saude", desc: "Landing page de alta conversão para clínica médica multiespecialidade.", cor: "#2A9D8F" },
+      { id: "advocacia-lex", nome: "Lex & Associados", nicho: "Jurídico", tag: "LAW", filter: "juridico", desc: "Site institucional para escritório de advocacia focado em autoridade.", cor: "#1A1A2E" },
+      { id: "restaurante-ora", nome: "Ora Restaurant", nicho: "Food & Beverage", tag: "FOOD", filter: "food", desc: "Landing page premium para restaurante contemporâneo.", cor: "#E07A5F" },
+      { id: "imobiliaria-prime", nome: "Prime Imóveis", nicho: "Imobiliário", tag: "REAL ESTATE", filter: "imobiliario", desc: "Plataforma de apresentação de imóveis com busca por filtros.", cor: "#C9A84C" },
+      { id: "studio-belle", nome: "Studio Belle Estética", nicho: "Beleza & Estética", tag: "BEAUTY", filter: "beleza", desc: "Site de alta conversão para studio de estética.", cor: "#F4A7B9" },
+      { id: "atlas-fitness", nome: "Atlas Performance", nicho: "Fitness & Saúde", tag: "FITNESS", filter: "fitness", desc: "Landing page de personal trainer com provas sociais.", cor: "#FF6B35" },
+      { id: "mentor-digital", nome: "Mentor Digital Academy", nicho: "Educação", tag: "EDUCATION", filter: "educacao", desc: "Página de vendas para curso online com estrutura de funil.", cor: "#6C63FF" },
+      { id: "nexus-tech", nome: "Nexus Tech Solutions", nicho: "Tecnologia", tag: "TECH", filter: "tecnologia", desc: "Site institucional para startup de tecnologia.", cor: "#1A3AFF" },
+      { id: "bravos-brasil", nome: "Bravos Brasil", nicho: "Moda & E-commerce", tag: "E-COMMERCE", filter: "ecommerce", desc: "E-commerce patriótico de moda com identidade visual forte e foco em conversão.", cor: "#1B3A5C" },
+      { id: "elleva-marketing", nome: "Elleva Marketing", nicho: "Marketing & Branding", tag: "MARKETING", filter: "marketing", desc: "Site institucional premium para agência de branding e posicionamento de marca.", cor: "#6C3FC5" }
+    ];
+
+    const grid = document.getElementById('portfolio-grid');
+    
+    portfolioItems.forEach(item => {
+      const card = document.createElement('a');
+      card.href = `projeto-${item.id}.html`;
+      card.className = 'portfolio-card';
+      card.dataset.filter = item.filter;
+      card.innerHTML = `
+        <div class="portfolio-card-bg" style="background: linear-gradient(135deg, ${item.cor}33, ${item.cor}66);"></div>
+        <div class="portfolio-card-overlay"></div>
+        <div class="portfolio-card-content">
+          <span class="portfolio-card-tag">${item.tag}</span>
+          <h3 class="portfolio-card-title">${item.nome}</h3>
+          <p class="portfolio-card-desc">${item.desc}</p>
+          <span class="portfolio-card-link">Ver projeto →</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const filter = btn.dataset.filter;
+        
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+          if (filter === 'all' || card.dataset.filter === filter) {
+            card.classList.remove('hidden');
+            card.style.position = 'relative';
+          } else {
+            card.classList.add('hidden');
+            card.style.position = 'absolute';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

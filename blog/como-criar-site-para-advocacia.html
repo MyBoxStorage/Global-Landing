@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='55' fill='none' stroke='%23C9A84C' stroke-width='2'/%3E%3Cellipse cx='60' cy='60' rx='55' ry='13' fill='none' stroke='%23C9A84C' stroke-width='1.5'/%3E%3Cpath d='M60,5 Q95,30 95,60 Q95,90 60,115' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3Cpath d='M60,5 Q25,30 25,60 Q25,90 60,115' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site para escritório de advocacia: o que não pode faltar para transmitir autoridade — Global Landing Blog</title>
+  <meta name="description" content="Descubra os elementos essenciais que todo site de advocacia precisa ter para transmitir credibilidade e captar clientes.">
+  <link rel="canonical" href="https://globallanding.com.br/blog/como-criar-site-para-advocacia">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://globallanding.com.br/blog/como-criar-site-para-advocacia">
+  <meta property="og:title" content="Site para escritório de advocacia: o que não pode faltar para transmitir autoridade">
+  <meta property="og:description" content="Descubra os elementos essenciais que todo site de advocacia precisa ter para transmitir credibilidade e captar clientes.">
+  <meta property="og:image" content="https://globallanding.com.br/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://globallanding.com.br/assets/og-image.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Site para escritório de advocacia: o que não pode faltar para transmitir autoridade",
+    "description": "Descubra os elementos essenciais que todo site de advocacia precisa ter para transmitir credibilidade e captar clientes.",
+    "author": {
+      "@type": "Organization",
+      "name": "Global Landing"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Global Landing",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://globallanding.com.br/assets/logo.svg"
+      }
+    },
+    "datePublished": "2025-01-27",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://globallanding.com.br/blog/como-criar-site-para-advocacia"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #080808;
+      --bg-secondary: #0f0f0f;
+      --bg-card: #141414;
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --royal-blue: #1A3AFF;
+      --text-primary: #F5F5F0;
+      --text-secondary: #A0A0A0;
+      --text-muted: #555555;
+      --border-subtle: rgba(201, 168, 76, 0.15);
+      --font-display: 'Cormorant Garamond', serif;
+      --font-mono: 'Space Mono', monospace;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      background: rgba(8,8,8,0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo svg { width: 36px; height: 36px; }
+
+    .nav-logo-text {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+    }
+
+    .article-header {
+      padding: 160px 0 60px;
+      text-align: center;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .article-category {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .article-date {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 32px;
+    }
+
+    .article-content {
+      padding-bottom: 80px;
+    }
+
+    .article-content p {
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-top: 48px;
+      margin-bottom: 24px;
+    }
+
+    .article-content strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .article-content a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+
+    .article-cta {
+      background: var(--bg-secondary);
+      padding: 48px;
+      border-radius: 12px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .article-cta p {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .btn-primary {
+      padding: 16px 40px;
+      background: var(--gold);
+      color: var(--bg-primary);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      background: #050505;
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 0 40px;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-nav a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-nav a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
+      margin-top: 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-bottom p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGradientNav" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#C9A84C"/>
+            <stop offset="50%" style="stop-color:#E8C97A"/>
+            <stop offset="100%" style="stop-color:#9A7A2E"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.8"/>
+        <ellipse cx="60" cy="60" rx="55" ry="13" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.8"/>
+        <path d="M60,5 Q95,30 95,60 Q95,90 60,115" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.6"/>
+        <path d="M60,5 Q25,30 25,60 Q25,90 60,115" fill="none" stroke="url(#goldGradientNav)" stroke-width="0.6"/>
+      </svg>
+      <span class="nav-logo-text">GLOBAL LANDING</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="../portfolio.html">Portfolio</a></li>
+      <li><a href="../servicos.html">Serviços</a></li>
+      <li><a href="../index.html#precos">Preços</a></li>
+      <li><a href="../index.html#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-meta">
+          <span class="article-category">Jurídico</span>
+          <span class="article-date">27 de janeiro de 2025</span>
+        </div>
+        <h1 class="article-title">Site para escritório de advocacia: o que não pode faltar para transmitir autoridade</h1>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+        <p>No direito, a percepção é realidade. Um site amador pode fazer um escritório competente parecer despreparado. Por outro lado, um site profissional e bem estruturado transmite autoridade, expertise e confiança — qualidades essenciais para atrair clientes.
+
+Neste artigo, vamos explorar os elementos cruciais que todo site de advocacia precisa ter para se posicionar como referência no mercado.</p>
+
+        <h2>1. Design sóbrio e profissional</h2>
+        <p>O design deve refletir a seriedade da profissão:
+
+<strong>Cores sóbrias:</strong> Azul marinho, cinza, preto, dourado — cores que transmitem tradição e confiança.
+
+<strong>Tipografia clássica:</strong> Fontes serifadas ou sans-serif elegantes, nada muito chamativo.
+
+<strong>Layout clean:</strong> Espaço em branco generoso, organização hierárquica clara.
+
+<strong>Fotos profissionais:</strong> Retratos corporativos de alta qualidade dos advogados.
+
+<strong>Evite:</strong> Cores neon, animações excessivas, design "descolado" demais.
+
+O objetivo é transmitir: "somos sérios, competentes e confiáveis".</p>
+
+        <h2>2. Perfil dos advogados completo</h2>
+        <p>A página "Quem Somos" ou "Equipe" é uma das mais visitadas:
+
+<strong>Foto profissional:</strong> Retrato de qualidade, vestimenta adequada.
+
+<strong>Formação acadêmica:</strong> Graduação, pós-graduação, mestrado, doutorado.
+
+<strong>OAB:</strong> Número de inscrição na OAB visível.
+
+<strong>Especializações:</strong> Áreas de atuação específicas.
+
+<strong>Experiência:</strong> Anos de atuação, escritórios anteriores, cases relevantes.
+
+<strong>Idiomas:</strong> Se atende clientes internacionais.
+
+<strong>Publicações:</strong> Artigos, livros, palestras — demonstra expertise.
+
+Cada perfil deve humanizar o advogado enquanto mantém o profissionalismo.</p>
+
+        <h2>3. Áreas de atuação detalhadas</h2>
+        <p>Crie páginas individuais para cada área de atuação:
+
+<strong>Direito Trabalhista:</strong> Reclamações trabalhistas, acordos, defesa de empresas.
+
+<strong>Direito Civil:</strong> Contratos, responsabilidade civil, direito de família.
+
+<strong>Direito Empresarial:</strong> Constituição de empresas, contratos societários, M&A.
+
+<strong>Direito Tributário:</strong> Planejamento tributário, defesa em fiscalizações.
+
+Para cada área, inclua:
+- Descrição dos serviços
+- Tipos de casos atendidos
+- Perguntas frequentes específicas
+- Call-to-action para consulta</p>
+
+        <h2>4. Blog jurídico para autoridade</h2>
+        <p>Um blog ativo é uma das melhores ferramentas de marketing para advogados:
+
+<strong>Demonstra expertise:</strong> Mostra que você domina a área.
+
+<strong>Atrai tráfego orgânico:</strong> Pessoas buscando sobre temas jurídicos encontram você.
+
+<strong>Gera confiança:</strong> Conteúdo educativo construi relacionamento.
+
+<strong>Diferencia da concorrência:</strong> Muitos escritórios não têm blog.
+
+<strong>Temas para blog jurídico:</strong>
+- Mudanças na legislação
+- Análise de decisões judiciais relevantes
+- Orientações práticas
+- Direitos do consumidor
+- Dúvidas frequentes de clientes
+
+Lembre-se: conteúdo não é consultoria jurídica. Inclua disclaimer apropriado.</p>
+
+        <h2>5. Elementos de confiança e conversão</h2>
+        <p>Além do conteúdo, inclua elementos que convertem visitantes em clientes:
+
+<strong>Depoimentos de clientes:</strong> Com autorização, inclua cases de sucesso.
+
+<strong>Números:</strong> "Mais de X casos atendidos", "Y anos de experiência".
+
+<strong>Certificações:</strong> Membro de associações, certificações específicas.
+
+<strong>Mídia:</strong> Se foi citado na imprensa, mostre.
+
+<strong>Formulário de contato:</strong> Simples, seguro, com campos essenciais.
+
+<strong>WhatsApp:</strong> Botão flutuante para contato rápido.
+
+<strong>Localização:</strong> Endereço completo com mapa.
+
+<strong>Horário de atendimento:</strong> Quando é possível falar com o escritório.</p>
+
+        <div class="article-cta">
+          <p>Um site de advocacia bem projetado é uma ferramenta poderosa de captação de clientes. Ele trabalha 24/7, posicionando seu escritório como autoridade e convertendo visitantes em consultas.
+
+Na Global Landing, entendemos as especificidades do mercado jurídico. Criamos sites para escritórios de advocacia que transmitem credibilidade, autoridade e confiança — elementos essenciais para atrair clientes de alto valor.
+
+Quer um site que reflita a excelência do seu escritório? <a href='../index.html#contato'>Entre em contato</a> e vamos conversar sobre seu projeto.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="../index.html" class="footer-logo">
+          <svg viewBox="0 0 120 120" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="goldGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A84C"/>
+                <stop offset="100%" style="stop-color:#9A7A2E"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGradientFooter)" stroke-width="0.8"/>
+            <ellipse cx="60" cy="60" rx="55" ry="13" fill="none" stroke="url(#goldGradientFooter)" stroke-width="0.8"/>
+          </svg>
+          <span>GLOBAL LANDING</span>
+        </a>
+
+        <nav class="footer-nav">
+          <a href="../portfolio.html">Portfolio</a>
+          <a href="../servicos.html">Serviços</a>
+          <a href="index.html">Blog</a>
+          <a href="../index.html#contato">Contato</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Global Landing · Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
