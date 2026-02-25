@@ -1505,40 +1505,26 @@
       opacity: 1;
     }
     
-    /* Cards com preview dinâmico (iframe) */
-    .portfolio-card--live {
-      cursor: none;
-    }
-    
-    .portfolio-card-iframe-wrap {
+    /* Cards com vídeo no hover */
+    .portfolio-card-video-wrap {
       position: absolute;
       inset: 0;
       overflow: hidden;
       border-radius: 12px;
     }
     
-    .portfolio-card-iframe {
-      width: 200%;
-      height: 200%;
-      transform: scale(0.5);
-      transform-origin: top left;
-      border: none;
-      pointer-events: none;
+    .portfolio-card-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
     
-    .portfolio-card-iframe-mask {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: transparent;
-    }
-    
-    .portfolio-card--live .portfolio-card-overlay {
+    .portfolio-card--video .portfolio-card-overlay {
       z-index: 2;
     }
     
-    .portfolio-card--live .portfolio-card-content {
+    .portfolio-card--video .portfolio-card-content {
       z-index: 3;
     }
     
@@ -2446,8 +2432,8 @@
         { id: "atlas-fitness", nome: "Atlas Performance", nicho: "Fitness & Saúde", tag: "FITNESS", cor_destaque: "#FF6B35" },
         { id: "mentor-digital", nome: "Mentor Digital Academy", nicho: "Educação", tag: "EDUCATION", cor_destaque: "#6C63FF" },
         { id: "nexus-tech", nome: "Nexus Tech Solutions", nicho: "Tecnologia", tag: "TECH", cor_destaque: "#1A3AFF" },
-        { id: "bravos-brasil", nome: "Bravos Brasil", nicho: "Moda & E-commerce", tag: "E-COMMERCE", cor_destaque: "#1B3A5C", url: "https://bravosbrasil.com.br/" },
-        { id: "elleva-marketing", nome: "Elleva Marketing", nicho: "Marketing & Branding", tag: "MARKETING", cor_destaque: "#6C3FC5", url: "https://elleva-marketing.vercel.app/" }
+        { id: "bravos-brasil", nome: "Bravos Brasil", nicho: "Moda & E-commerce", tag: "E-COMMERCE", cor_destaque: "#1B3A5C", video: "assets/videos/bravos-brasil.webm" },
+        { id: "elleva-marketing", nome: "Elleva Marketing", nicho: "Marketing & Branding", tag: "MARKETING", cor_destaque: "#6C3FC5", video: "assets/videos/elleva-marketing.webm" }
       ];
       
       const gallery = document.getElementById('portfolio-gallery');
@@ -2457,21 +2443,12 @@
         card.href = `projeto-${item.id}.html`;
         card.className = 'portfolio-card';
 
-        if (item.url) {
-          // Card com preview dinâmico (iframe)
-          card.classList.add('portfolio-card--live');
+        if (item.video) {
+          // Card com vídeo no hover
+          card.classList.add('portfolio-card--video');
           card.innerHTML = `
-      <div class="portfolio-card-iframe-wrap">
-        <iframe
-          src="${item.url}"
-          class="portfolio-card-iframe"
-          scrolling="no"
-          tabindex="-1"
-          loading="lazy"
-          sandbox="allow-scripts allow-same-origin"
-          title="Preview ${item.nome}"
-        ></iframe>
-        <div class="portfolio-card-iframe-mask"></div>
+      <div class="portfolio-card-video-wrap">
+        <video muted playsinline preload="none" data-src="${item.video}" aria-label="Preview ${item.nome}"></video>
       </div>
       <div class="portfolio-card-overlay"></div>
       <div class="portfolio-card-content">
@@ -2480,29 +2457,6 @@
         <span class="portfolio-card-link">Ver projeto →</span>
       </div>
     `;
-          // Scroll automático suave no iframe após carregar
-          const iframe = card.querySelector('iframe');
-          iframe.addEventListener('load', () => {
-            try {
-              let pos = 0;
-              let direction = 1;
-              const speed = 0.4;
-              const scrollInterval = setInterval(() => {
-                try {
-                  const doc = iframe.contentWindow.document;
-                  const maxScroll = doc.body.scrollHeight - doc.documentElement.clientHeight;
-                  if (maxScroll <= 0) return;
-                  pos += speed * direction;
-                  if (pos >= maxScroll * 0.6) direction = -1;
-                  if (pos <= 0) direction = 1;
-                  iframe.contentWindow.scrollTo(0, pos);
-                } catch(e) {
-                  clearInterval(scrollInterval);
-                }
-              }, 16);
-              card.dataset.scrollInterval = scrollInterval;
-            } catch(e) {}
-          });
         } else {
           // Card com gradiente (projetos fictícios — comportamento atual)
           card.innerHTML = `
@@ -2516,6 +2470,34 @@
     `;
         }
         gallery.appendChild(card);
+      });
+
+      // Lazy-load vídeo: atribui src quando o card entra na viewport
+      const videoCards = gallery.querySelectorAll('.portfolio-card--video');
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const card = entry.target;
+          const video = card.querySelector('video');
+          if (!video || video.src) return;
+          const dataSrc = video.getAttribute('data-src');
+          if (dataSrc) {
+            video.src = dataSrc;
+            videoObserver.unobserve(card);
+          }
+        });
+      }, { rootMargin: '50px' });
+      videoCards.forEach(card => videoObserver.observe(card));
+
+      // Vídeo play no hover, pause ao sair
+      videoCards.forEach(card => {
+        const video = card.querySelector('video');
+        if (!video) return;
+        card.addEventListener('mouseenter', () => { video.play().catch(() => {}); });
+        card.addEventListener('mouseleave', () => {
+          video.pause();
+          video.currentTime = 0;
+        });
       });
     })();
 
