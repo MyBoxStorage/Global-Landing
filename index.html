@@ -1505,6 +1505,43 @@
       opacity: 1;
     }
     
+    /* Cards com preview dinâmico (iframe) */
+    .portfolio-card--live {
+      cursor: none;
+    }
+    
+    .portfolio-card-iframe-wrap {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    
+    .portfolio-card-iframe {
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+      transform-origin: top left;
+      border: none;
+      pointer-events: none;
+      display: block;
+    }
+    
+    .portfolio-card-iframe-mask {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: transparent;
+    }
+    
+    .portfolio-card--live .portfolio-card-overlay {
+      z-index: 2;
+    }
+    
+    .portfolio-card--live .portfolio-card-content {
+      z-index: 3;
+    }
+    
     .portfolio-card-tag {
       font-family: var(--font-mono);
       font-size: 10px;
@@ -2409,8 +2446,8 @@
         { id: "atlas-fitness", nome: "Atlas Performance", nicho: "Fitness & Saúde", tag: "FITNESS", cor_destaque: "#FF6B35" },
         { id: "mentor-digital", nome: "Mentor Digital Academy", nicho: "Educação", tag: "EDUCATION", cor_destaque: "#6C63FF" },
         { id: "nexus-tech", nome: "Nexus Tech Solutions", nicho: "Tecnologia", tag: "TECH", cor_destaque: "#1A3AFF" },
-        { id: "bravos-brasil", nome: "Bravos Brasil", nicho: "Moda & E-commerce", tag: "E-COMMERCE", cor_destaque: "#1B3A5C" },
-        { id: "elleva-marketing", nome: "Elleva Marketing", nicho: "Marketing & Branding", tag: "MARKETING", cor_destaque: "#6C3FC5" }
+        { id: "bravos-brasil", nome: "Bravos Brasil", nicho: "Moda & E-commerce", tag: "E-COMMERCE", cor_destaque: "#1B3A5C", url: "https://bravosbrasil.com.br/" },
+        { id: "elleva-marketing", nome: "Elleva Marketing", nicho: "Marketing & Branding", tag: "MARKETING", cor_destaque: "#6C3FC5", url: "https://elleva-marketing.vercel.app/" }
       ];
       
       const gallery = document.getElementById('portfolio-gallery');
@@ -2419,15 +2456,65 @@
         const card = document.createElement('a');
         card.href = `projeto-${item.id}.html`;
         card.className = 'portfolio-card';
-        card.innerHTML = `
-          <div class="portfolio-card-bg" style="background: linear-gradient(135deg, ${item.cor_destaque}22, ${item.cor_destaque}44);"></div>
-          <div class="portfolio-card-overlay"></div>
-          <div class="portfolio-card-content">
-            <span class="portfolio-card-tag">${item.tag}</span>
-            <h3 class="portfolio-card-title">${item.nome}</h3>
-            <span class="portfolio-card-link">Ver projeto →</span>
-          </div>
-        `;
+
+        if (item.url) {
+          // Card com preview dinâmico (iframe)
+          card.classList.add('portfolio-card--live');
+          card.innerHTML = `
+      <div class="portfolio-card-iframe-wrap">
+        <iframe
+          src="${item.url}"
+          class="portfolio-card-iframe"
+          scrolling="no"
+          tabindex="-1"
+          loading="lazy"
+          sandbox="allow-scripts allow-same-origin"
+          title="Preview ${item.nome}"
+        ></iframe>
+        <div class="portfolio-card-iframe-mask"></div>
+      </div>
+      <div class="portfolio-card-overlay"></div>
+      <div class="portfolio-card-content">
+        <span class="portfolio-card-tag">${item.tag}</span>
+        <h3 class="portfolio-card-title">${item.nome}</h3>
+        <span class="portfolio-card-link">Ver projeto →</span>
+      </div>
+    `;
+          // Scroll automático suave no iframe após carregar
+          const iframe = card.querySelector('iframe');
+          iframe.addEventListener('load', () => {
+            try {
+              let pos = 0;
+              let direction = 1;
+              const speed = 0.4;
+              const scrollInterval = setInterval(() => {
+                try {
+                  const doc = iframe.contentWindow.document;
+                  const maxScroll = doc.body.scrollHeight - doc.documentElement.clientHeight;
+                  if (maxScroll <= 0) return;
+                  pos += speed * direction;
+                  if (pos >= maxScroll * 0.6) direction = -1;
+                  if (pos <= 0) direction = 1;
+                  iframe.contentWindow.scrollTo(0, pos);
+                } catch(e) {
+                  clearInterval(scrollInterval);
+                }
+              }, 16);
+              card.dataset.scrollInterval = scrollInterval;
+            } catch(e) {}
+          });
+        } else {
+          // Card com gradiente (projetos fictícios — comportamento atual)
+          card.innerHTML = `
+      <div class="portfolio-card-bg" style="background: linear-gradient(135deg, ${item.cor_destaque}22, ${item.cor_destaque}44);"></div>
+      <div class="portfolio-card-overlay"></div>
+      <div class="portfolio-card-content">
+        <span class="portfolio-card-tag">${item.tag}</span>
+        <h3 class="portfolio-card-title">${item.nome}</h3>
+        <span class="portfolio-card-link">Ver projeto →</span>
+      </div>
+    `;
+        }
         gallery.appendChild(card);
       });
     })();
