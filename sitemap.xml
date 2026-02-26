@@ -43,6 +43,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://globallanding.com.br/projeto-atlas-performance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://globallanding.com.br/projeto-atlas-fitness</loc>
     <priority>0.7</priority>
   </url>
