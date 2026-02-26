@@ -278,13 +278,28 @@
       color: var(--text-muted);
     }
     
-    .browser-screen {
-      aspect-ratio: 16/10;
-      background: linear-gradient(135deg, var(--project-color)22, var(--project-color)44);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .browser-screen,
+    .mockup-screen {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: #0a0a0a;
     }
+    .mockup-screen iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      transform-origin: top left;
+    }
+    .mockup-browser { background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); }
+    .mockup-bar { display: flex; align-items: center; gap: 8px; padding: 16px 20px; background: var(--bg-secondary); border-bottom: 1px solid var(--border-subtle); }
+    .mockup-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .mockup-dot.red { background: #ff5f56; }
+    .mockup-dot.yellow { background: #ffbd2e; }
+    .mockup-dot.green { background: #27c93f; }
+    .mockup-url { flex: 1; margin-left: 16px; padding: 8px 16px; background: var(--bg-primary); border-radius: 6px; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
     
     .browser-screen-content {
       text-align: center;
@@ -469,18 +484,15 @@
 
   <section class="project-mockup">
     <div class="container">
-      <div class="browser-frame">
-        <div class="browser-controls">
-          <span class="browser-dot red"></span>
-          <span class="browser-dot yellow"></span>
-          <span class="browser-dot green"></span>
-          <span class="browser-url">elleva-marketing.com.br</span>
+      <div class="mockup-browser">
+        <div class="mockup-bar">
+          <span class="mockup-dot red"></span>
+          <span class="mockup-dot yellow"></span>
+          <span class="mockup-dot green"></span>
+          <span class="mockup-url">elleva-marketing.vercel.app</span>
         </div>
-        <div class="browser-screen">
-          <div class="browser-screen-content">
-            <h3>Elleva Marketing</h3>
-            <p>Branding e posicionamento de marca</p>
-          </div>
+        <div class="mockup-screen">
+          <iframe src="https://elleva-marketing.vercel.app" title="Elleva Marketing" loading="lazy" scrolling="yes"></iframe>
         </div>
       </div>
     </div>

@@ -284,6 +284,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .browser-screen:has(> img) {
+      display: block;
+    }
+    .browser-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     
     .browser-screen-content {
@@ -474,13 +485,10 @@
           <span class="browser-dot red"></span>
           <span class="browser-dot yellow"></span>
           <span class="browser-dot green"></span>
-          <span class="browser-url">cabral-souza.com.br</span>
+          <span class="browser-url">cabralesouza.com.br</span>
         </div>
-        <div class="browser-screen">
-          <div class="browser-screen-content">
-            <h3>Cabral & Souza Antiguidades</h3>
-            <p>Galeria & Antiquário Premium — Rio de Janeiro</p>
-          </div>
+        <div class="browser-screen" style="cursor:pointer;" onclick="window.open('https://www.cabralesouza.com.br','_blank')">
+          <img src="assets/videos/poster-cabral-souza.jpg" alt="Cabral & Souza" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
       </div>
     </div>
