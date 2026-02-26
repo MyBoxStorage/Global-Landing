@@ -1243,14 +1243,31 @@
         
         <div class="form-group full-width">
           <label for="nivel">Qual solução te interessa?</label>
-          <select id="nivel" name="nivel" required>
-            <option value="">Selecione...</option>
-            <option value="nivel1">Nível 1 · Presença (a partir de R$ 1.000)</option>
-            <option value="nivel2">Nível 2 · Posicionamento (a partir de R$ 2.000)</option>
-            <option value="nivel3">Nível 3 · Referência (a partir de R$ 4.000)</option>
-            <option value="custom">Custom · Projeto Exclusivo (sob consulta)</option>
-            <option value="nao-sei">Ainda não sei — quero uma orientação</option>
-          </select>
+          <div class="custom-select-wrapper">
+            <select id="nivel" name="nivel" required>
+              <option value="">Selecione...</option>
+              <option value="nivel1">Nível 1 · Presença (a partir de R$ 1.000)</option>
+              <option value="nivel2">Nível 2 · Posicionamento (a partir de R$ 2.000)</option>
+              <option value="nivel3">Nível 3 · Referência (a partir de R$ 4.000)</option>
+              <option value="custom">Custom · Projeto Exclusivo (sob consulta)</option>
+              <option value="nao-sei">Ainda não sei — quero uma orientação</option>
+            </select>
+            <div class="custom-select">
+              <div class="custom-select-trigger">
+                <span class="custom-select-label">Selecione...</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="custom-options">
+                <div class="custom-option" data-value="nivel1">Nível 1 · Presença (a partir de R$ 1.000)</div>
+                <div class="custom-option" data-value="nivel2">Nível 2 · Posicionamento (a partir de R$ 2.000)</div>
+                <div class="custom-option" data-value="nivel3">Nível 3 · Referência (a partir de R$ 4.000)</div>
+                <div class="custom-option" data-value="custom">Custom · Projeto Exclusivo (sob consulta)</div>
+                <div class="custom-option" data-value="nao-sei">Ainda não sei — quero uma orientação</div>
+              </div>
+            </div>
+          </div>
         </div>
         
         <div class="form-group full-width">
@@ -2064,17 +2081,94 @@
       color: var(--text-muted);
     }
     
-    .form-group select {
-      cursor: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23555555' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right center;
+    /* SELECT CUSTOMIZADO */
+    .custom-select-wrapper {
+      position: relative;
+      width: 100%;
     }
-    
-    .form-group select option {
-      background: var(--bg-card);
-      color: var(--text-primary);
+    .custom-select-wrapper select {
+      display: none;
+    }
+    .custom-select {
+      position: relative;
+      width: 100%;
+      cursor: pointer;
+    }
+    .custom-select-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 0 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.4);
+      font-family: var(--font-body, inherit);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .custom-select-trigger.has-value {
+      color: #fff;
+    }
+    .custom-select-trigger:hover {
+      border-color: var(--gold, #C9A96E);
+    }
+    .custom-select-trigger svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0.5;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .custom-select.open .custom-select-trigger svg {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+    .custom-select.open .custom-select-trigger {
+      border-color: var(--gold, #C9A96E);
+      color: #fff;
+    }
+    .custom-options {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.1);
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);
+      max-height: 280px;
+      overflow-y: auto;
+    }
+    .custom-select.open .custom-options {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .custom-option {
+      padding: 0.85rem 1.2rem;
+      font-family: var(--font-body, inherit);
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .custom-option:last-child {
+      border-bottom: none;
+    }
+    .custom-option:hover {
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+    }
+    .custom-option.selected {
+      color: var(--gold, #C9A96E);
+    }
+    .custom-option[data-value=""] {
+      display: none;
     }
     
     .btn-large {
@@ -2593,6 +2687,57 @@
       });
     })();
 
+    // ===== CUSTOM SELECT =====
+    function initCustomSelects() {
+      document.querySelectorAll('.custom-select-wrapper').forEach(function(wrapper) {
+        var select = wrapper.querySelector('select');
+        var trigger = wrapper.querySelector('.custom-select-trigger');
+        var optionsContainer = wrapper.querySelector('.custom-options');
+        var customSelect = wrapper.querySelector('.custom-select');
+        var labelEl = trigger.querySelector('.custom-select-label');
+
+        // Estado inicial a partir do select
+        var initialOpt = select.querySelector('option[value="' + select.value + '"]');
+        if (select.value && initialOpt) {
+          labelEl.textContent = initialOpt.textContent;
+          trigger.classList.add('has-value');
+          wrapper.querySelectorAll('.custom-option').forEach(function(o) {
+            o.classList.toggle('selected', o.getAttribute('data-value') === select.value);
+          });
+        }
+
+        document.addEventListener('click', function(e) {
+          if (!wrapper.contains(e.target)) {
+            customSelect.classList.remove('open');
+          }
+        });
+
+        trigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          document.querySelectorAll('.custom-select.open').forEach(function(s) {
+            if (s !== customSelect) s.classList.remove('open');
+          });
+          customSelect.classList.toggle('open');
+        });
+
+        wrapper.querySelectorAll('.custom-option').forEach(function(opt) {
+          opt.addEventListener('click', function() {
+            var value = opt.getAttribute('data-value');
+            var label = opt.textContent;
+            select.value = value;
+            labelEl.textContent = label;
+            trigger.classList.add('has-value');
+            wrapper.querySelectorAll('.custom-option').forEach(function(o) {
+              o.classList.remove('selected');
+            });
+            opt.classList.add('selected');
+            customSelect.classList.remove('open');
+          });
+        });
+      });
+    }
+    initCustomSelects();
+
     // ===== FORM SUBMISSION (Formspree + in-page success) =====
     (function() {
       const form = document.getElementById('contact-form');
@@ -2627,6 +2772,14 @@
             successEl.hidden = false;
             form.classList.add('hidden-after-submit');
             form.reset();
+            form.querySelectorAll('.custom-select-wrapper').forEach(function(w) {
+              var t = w.querySelector('.custom-select-trigger');
+              var lbl = t.querySelector('.custom-select-label');
+              lbl.textContent = 'Selecione...';
+              t.classList.remove('has-value');
+              w.querySelectorAll('.custom-option').forEach(function(o) { o.classList.remove('selected'); });
+              w.querySelector('.custom-select').classList.remove('open');
+            });
           } else {
             successEl.hidden = false;
             successEl.querySelector('p').innerHTML = '<strong>Erro ao enviar.</strong> Tente novamente ou nos chame no WhatsApp.';
