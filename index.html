@@ -2458,8 +2458,21 @@
         <span class="portfolio-card-link">Ver projeto →</span>
       </div>
     `;
+        } else if (item.poster) {
+          // Card só com poster estático (sem vídeo)
+          card.innerHTML = `
+      <div class="portfolio-card-video-wrap">
+        <img src="${item.poster}" alt="${item.nome}" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="portfolio-card-overlay"></div>
+      <div class="portfolio-card-content">
+        <span class="portfolio-card-tag">${item.tag}</span>
+        <h3 class="portfolio-card-title">${item.nome}</h3>
+        <span class="portfolio-card-link">Ver projeto →</span>
+      </div>
+    `;
         } else {
-          // Card com gradiente (projetos fictícios — comportamento atual)
+          // Card com gradiente (projetos fictícios)
           card.innerHTML = `
       <div class="portfolio-card-bg" style="background: linear-gradient(135deg, ${item.cor_destaque}22, ${item.cor_destaque}44);"></div>
       <div class="portfolio-card-overlay"></div>
