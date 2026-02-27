@@ -1,1 +1,136 @@
-{"rewrites":[{"source":"/portfolio","destination":"/portfolio.html"},{"source":"/servicos","destination":"/servicos.html"},{"source":"/projeto-clinica-horizonte","destination":"/projeto-clinica-horizonte.html"},{"source":"/projeto-advocacia-lex","destination":"/projeto-advocacia-lex.html"},{"source":"/projeto-restaurante-ora","destination":"/projeto-restaurante-ora.html"},{"source":"/projeto-imobiliaria-prime","destination":"/projeto-imobiliaria-prime.html"},{"source":"/projeto-studio-belle","destination":"/projeto-studio-belle.html"},{"source":"/projeto-atlas-performance","destination":"/projeto-atlas-performance.html"},{"source":"/projeto-atlas-fitness","destination":"/projeto-atlas-fitness.html"},{"source":"/projeto-mentor-digital-academy","destination":"/projeto-mentor-digital-academy.html"},{"source":"/projeto-nexus-tech","destination":"/projeto-nexus-tech.html"},{"source":"/projeto-bravos-brasil","destination":"/projeto-bravos-brasil.html"},{"source":"/projeto-elleva-marketing","destination":"/projeto-elleva-marketing.html"},{"source":"/projeto-cabral-souza","destination":"/projeto-cabral-souza.html"},{"source":"/sites-para-advocacia","destination":"/sites-para-advocacia.html"},{"source":"/sites-para-clinicas","destination":"/sites-para-clinicas.html"},{"source":"/sites-para-restaurantes","destination":"/sites-para-restaurantes.html"},{"source":"/sites-para-imoveis","destination":"/sites-para-imoveis.html"},{"source":"/sites-para-estetica","destination":"/sites-para-estetica.html"},{"source":"/sites-para-fitness","destination":"/sites-para-fitness.html"},{"source":"/sites-para-educacao","destination":"/sites-para-educacao.html"},{"source":"/sites-para-tecnologia","destination":"/sites-para-tecnologia.html"},{"source":"/blog","destination":"/blog/index.html"},{"source":"/blog/por-que-sua-empresa-precisa-de-um-site-em-2025","destination":"/blog/por-que-sua-empresa-precisa-de-um-site-em-2025.html"},{"source":"/blog/quanto-custa-criar-um-site-profissional-brasil","destination":"/blog/quanto-custa-criar-um-site-profissional-brasil.html"},{"source":"/blog/diferenca-entre-landing-page-e-site-institucional","destination":"/blog/diferenca-entre-landing-page-e-site-institucional.html"},{"source":"/blog/como-aparecer-no-google-sem-pagar-anuncio","destination":"/blog/como-aparecer-no-google-sem-pagar-anuncio.html"},{"source":"/blog/o-que-e-geo-otimizacao-para-ia","destination":"/blog/o-que-e-geo-otimizacao-para-ia.html"},{"source":"/blog/site-ou-instagram-para-empresa","destination":"/blog/site-ou-instagram-para-empresa.html"},{"source":"/blog/melhores-tecnologias-para-criar-sites-rapidos","destination":"/blog/melhores-tecnologias-para-criar-sites-rapidos.html"},{"source":"/blog/como-criar-site-para-clinica-medica","destination":"/blog/como-criar-site-para-clinica-medica.html"},{"source":"/blog/como-criar-site-para-advocacia","destination":"/blog/como-criar-site-para-advocacia.html"},{"source":"/blog/entrega-de-sites-em-2-semanas-e-possivel","destination":"/blog/entrega-de-sites-em-2-semanas-e-possivel.html"}]}
+{
+    "rewrites": [
+        {
+            "source": "/portfolio",
+            "destination": "/portfolio.html"
+        },
+        {
+            "source": "/servicos",
+            "destination": "/servicos.html"
+        },
+        {
+            "source": "/projeto-clinica-horizonte",
+            "destination": "/projeto-clinica-horizonte.html"
+        },
+        {
+            "source": "/projeto-advocacia-lex",
+            "destination": "/projeto-advocacia-lex.html"
+        },
+        {
+            "source": "/projeto-oxi-restaurante",
+            "destination": "/projeto-oxi-restaurante.html"
+        },
+        {
+            "source": "/projeto-prime-imoveis",
+            "destination": "/projeto-prime-imoveis.html"
+        },
+        {
+            "source": "/projeto-studio-belle",
+            "destination": "/projeto-studio-belle.html"
+        },
+        {
+            "source": "/projeto-atlas-performance",
+            "destination": "/projeto-atlas-performance.html"
+        },
+        {
+            "source": "/projeto-atlas-fitness",
+            "destination": "/projeto-atlas-fitness.html"
+        },
+        {
+            "source": "/projeto-mentor-digital-academy",
+            "destination": "/projeto-mentor-digital-academy.html"
+        },
+        {
+            "source": "/projeto-nexus-tech",
+            "destination": "/projeto-nexus-tech.html"
+        },
+        {
+            "source": "/projeto-bravos-brasil",
+            "destination": "/projeto-bravos-brasil.html"
+        },
+        {
+            "source": "/projeto-elleva-marketing",
+            "destination": "/projeto-elleva-marketing.html"
+        },
+        {
+            "source": "/projeto-cabral-souza",
+            "destination": "/projeto-cabral-souza.html"
+        },
+        {
+            "source": "/sites-para-advocacia",
+            "destination": "/sites-para-advocacia.html"
+        },
+        {
+            "source": "/sites-para-clinicas",
+            "destination": "/sites-para-clinicas.html"
+        },
+        {
+            "source": "/sites-para-restaurantes",
+            "destination": "/sites-para-restaurantes.html"
+        },
+        {
+            "source": "/sites-para-imoveis",
+            "destination": "/sites-para-imoveis.html"
+        },
+        {
+            "source": "/sites-para-estetica",
+            "destination": "/sites-para-estetica.html"
+        },
+        {
+            "source": "/sites-para-fitness",
+            "destination": "/sites-para-fitness.html"
+        },
+        {
+            "source": "/sites-para-educacao",
+            "destination": "/sites-para-educacao.html"
+        },
+        {
+            "source": "/sites-para-tecnologia",
+            "destination": "/sites-para-tecnologia.html"
+        },
+        {
+            "source": "/blog",
+            "destination": "/blog/index.html"
+        },
+        {
+            "source": "/blog/por-que-sua-empresa-precisa-de-um-site-em-2025",
+            "destination": "/blog/por-que-sua-empresa-precisa-de-um-site-em-2025.html"
+        },
+        {
+            "source": "/blog/quanto-custa-criar-um-site-profissional-brasil",
+            "destination": "/blog/quanto-custa-criar-um-site-profissional-brasil.html"
+        },
+        {
+            "source": "/blog/diferenca-entre-landing-page-e-site-institucional",
+            "destination": "/blog/diferenca-entre-landing-page-e-site-institucional.html"
+        },
+        {
+            "source": "/blog/como-aparecer-no-google-sem-pagar-anuncio",
+            "destination": "/blog/como-aparecer-no-google-sem-pagar-anuncio.html"
+        },
+        {
+            "source": "/blog/o-que-e-geo-otimizacao-para-ia",
+            "destination": "/blog/o-que-e-geo-otimizacao-para-ia.html"
+        },
+        {
+            "source": "/blog/site-ou-instagram-para-empresa",
+            "destination": "/blog/site-ou-instagram-para-empresa.html"
+        },
+        {
+            "source": "/blog/melhores-tecnologias-para-criar-sites-rapidos",
+            "destination": "/blog/melhores-tecnologias-para-criar-sites-rapidos.html"
+        },
+        {
+            "source": "/blog/como-criar-site-para-clinica-medica",
+            "destination": "/blog/como-criar-site-para-clinica-medica.html"
+        },
+        {
+            "source": "/blog/como-criar-site-para-advocacia",
+            "destination": "/blog/como-criar-site-para-advocacia.html"
+        },
+        {
+            "source": "/blog/entrega-de-sites-em-2-semanas-e-possivel",
+            "destination": "/blog/entrega-de-sites-em-2-semanas-e-possivel.html"
+        }
+    ]
+}
