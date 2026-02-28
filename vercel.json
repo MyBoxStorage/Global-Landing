@@ -57,6 +57,10 @@
             "destination": "/projeto-cabral-souza.html"
         },
         {
+            "source": "/projeto-global-landing",
+            "destination": "/projeto-global-landing.html"
+        },
+        {
             "source": "/sites-para-advocacia",
             "destination": "/sites-para-advocacia.html"
         },
