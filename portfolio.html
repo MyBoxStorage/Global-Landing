@@ -257,7 +257,7 @@
     }
 
     .portfolio-card:hover {
-      transform: translateY(-8px);
+      transform: scale(1.03);
     }
 
     .portfolio-card-bg {
@@ -278,16 +278,9 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transform: scale(1);
-      transition: transform 8s ease;
     }
 
     .portfolio-card:hover .portfolio-card-bg {
-      transform: scale(1.1);
-    }
-
-    .portfolio-card:hover .portfolio-card-video-wrap video,
-    .portfolio-card:hover .portfolio-card-video-wrap img {
       transform: scale(1.1);
     }
 
@@ -309,6 +302,14 @@
       left: 0;
       right: 0;
       padding: 32px;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    .portfolio-card:hover .portfolio-card-content {
+      transform: translateY(0);
+      opacity: 1;
     }
 
     .portfolio-card-tag {
@@ -334,14 +335,6 @@
       color: var(--text-secondary);
       line-height: 1.6;
       margin-bottom: 16px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.4s ease;
-    }
-
-    .portfolio-card:hover .portfolio-card-desc {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .portfolio-card-link {
@@ -520,7 +513,9 @@
         tag: "FOOD",
         filter: "food",
         desc: "Site completo para restaurante de cozinha nordestina com cardápio digital, reservas online e identidade visual imersiva.",
-        cor: "#8B3A1A"
+        cor: "#8B3A1A",
+        video: "assets/videos/oxi-restaurante.webm",
+        poster: "assets/videos/poster-oxi-restaurante.jpg"
       },
       {
         id: "prime-imoveis",
@@ -533,14 +528,14 @@
         video: "assets/videos/prime-imoveis.webm",
         poster: "assets/videos/poster-prime-imoveis.jpg"
       },
-      { id: "studio-belle", nome: "Studio Belle Estética", nicho: "Beleza & Estética", tag: "BEAUTY", filter: "beauty", desc: "Site de alta conversão para studio de estética com galeria de resultados e agendamento direto via WhatsApp.", cor: "#C9A96E" },
+      { id: "studio-belle", nome: "Studio Belle Estética", nicho: "Beleza & Estética", tag: "BEAUTY", filter: "beauty", desc: "Site de alta conversão para studio de estética com galeria de resultados e agendamento direto via WhatsApp.", cor: "#C9A96E", video: "assets/videos/studio-belle.webm", poster: "assets/videos/poster-studio-belle.jpg" },
       { id: "global-landing", nome: "Global Landing", nicho: "Portfólio", tag: "PORTFOLIO", filter: "portfolio", desc: "Site institucional da Global Landing — portfólio de desenvolvimento web, sites em até 14 dias.", cor: "#C9A96E", video: "assets/videos/global-landing.webm", poster: "assets/videos/poster-global-landing.jpg" },
-      { id: "atlas-performance", nome: "Atlas Performance", nicho: "Fitness & Personal Trainer", tag: "FITNESS", filter: "fitness", desc: "Site de alta conversão para personal trainer premium com método próprio, galeria de resultados e agendamento direto.", cor: "#E85D04" },
-      { id: "mentor-digital-academy", nome: "Mentor Digital Academy", nicho: "Educação & Cursos Online", tag: "EDUCATION", filter: "education", desc: "Página de vendas para curso online com estrutura de funil, depoimentos e checkout integrado.", cor: "#6C63FF" },
-      { id: "nexus-tech", nome: "Nexus Tech Solutions", nicho: "Tecnologia", tag: "TECH", filter: "tecnologia", desc: "Site institucional para startup de tecnologia.", cor: "#1A3AFF" },
-      { id: "bravos-brasil", nome: "Bravos Brasil", nicho: "Moda & E-commerce", tag: "E-COMMERCE", filter: "ecommerce", desc: "E-commerce patriótico de moda com identidade visual forte e foco em conversão.", cor: "#1B3A5C" },
-      { id: "elleva-marketing", nome: "Elleva Marketing", nicho: "Marketing & Branding", tag: "MARKETING", filter: "marketing", desc: "Site institucional premium para agência de branding e posicionamento de marca.", cor: "#6C3FC5" },
-      { id: "cabral-souza", nome: "Cabral & Souza", nicho: "Galeria & Antiquário", tag: "GALERIA", filter: "galeria", desc: "Site de galeria de arte e antiquário especializado em quadros a óleo, esculturas em bronze e arte clássica brasileira.", cor: "#A8843A" }
+      { id: "atlas-performance", nome: "Atlas Performance", nicho: "Fitness & Personal Trainer", tag: "FITNESS", filter: "fitness", desc: "Site de alta conversão para personal trainer premium com método próprio, galeria de resultados e agendamento direto.", cor: "#E85D04", video: "assets/videos/atlas-performance.webm", poster: "assets/videos/poster-atlas-performance.jpg" },
+      { id: "mentor-digital-academy", nome: "Mentor Digital Academy", nicho: "Educação & Cursos Online", tag: "EDUCATION", filter: "education", desc: "Página de vendas para curso online com estrutura de funil, depoimentos e checkout integrado.", cor: "#6C63FF", video: "assets/videos/mentor-digital-academy.webm", poster: "assets/videos/poster-mentor-digital-academy.jpg" },
+      { id: "nexus-tech", nome: "Nexus Tech Solutions", nicho: "Tecnologia", tag: "TECH", filter: "tecnologia", desc: "Site institucional para startup de tecnologia.", cor: "#1A3AFF", video: "assets/videos/nexus-tech.webm", poster: "assets/videos/poster-nexus-tech.jpg" },
+      { id: "bravos-brasil", nome: "Bravos Brasil", nicho: "Moda & E-commerce", tag: "E-COMMERCE", filter: "ecommerce", desc: "E-commerce patriótico de moda com identidade visual forte e foco em conversão.", cor: "#1B3A5C", video: "assets/videos/bravos-brasil.webm", poster: "assets/videos/poster-bravos-brasil.jpg" },
+      { id: "elleva-marketing", nome: "Elleva Marketing", nicho: "Marketing & Branding", tag: "MARKETING", filter: "marketing", desc: "Site institucional premium para agência de branding e posicionamento de marca.", cor: "#6C3FC5", video: "assets/videos/elleva-marketing.webm", poster: "assets/videos/poster-elleva-marketing.jpg" },
+      { id: "cabral-souza", nome: "Cabral & Souza", nicho: "Galeria & Antiquário", tag: "GALERIA", filter: "galeria", desc: "Site de galeria de arte e antiquário especializado em quadros a óleo, esculturas em bronze e arte clássica brasileira.", cor: "#A8843A", video: "assets/videos/cabral-souza.webm", poster: "assets/videos/poster-cabral-souza.jpg" }
     ];
 
     const grid = document.getElementById('portfolio-grid');
